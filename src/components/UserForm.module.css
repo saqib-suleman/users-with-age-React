@@ -1,0 +1,36 @@
+.user-form {
+  margin-top: 3rem;
+  width: 60rem;
+  height: 25rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+.user-form button {
+  background-color: rgb(100, 120, 228);
+  font-size: 2.5rem;
+  color: black;
+  margin: 1.5rem;
+  padding: 1rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control label {
+  margin: 1rem;
+  font-size: 3rem;
+}
+
+.form-control input {
+  width: 55rem;
+  height: 3rem;
+  border: purple 1px solid;
+  font-size: 2rem;
+}

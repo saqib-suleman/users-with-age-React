@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import UserForm from './components/UserForm';
+import UsersList from './components/UsersList';
 
 function App() {
+  const [usersList, setUsersList] = useState([]);
+
+  const onConfirmHandler = (username, userAge) => {
+    setUsersList((prevState) => {
+      return [
+        ...prevState,
+        { username: username, userAge: userAge, id: Math.random() },
+      ];
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <UserForm onConfirm={onConfirmHandler} />
+      <UsersList users={usersList} />
     </div>
   );
 }
